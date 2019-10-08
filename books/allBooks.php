@@ -1,4 +1,4 @@
-<?php require('templates/header.php'); ?>
+<?php require('../templates/header.php'); ?>
 
         <div class="row mb-2">
             <div class="col">
@@ -8,7 +8,7 @@
 
         <div class="row mb-2">
             <div class="col">
-                <a class="btn btn-outline-primary" href="addBook.php">Add new Book</a>
+                <a class="btn btn-outline-primary" href="books/addBook.php">Add new Book</a>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
                          <p class="card-text">Harry Potter and the Philosopher's Stone</p>
                          <div class="d-flex justify-content-between align-items-center">
                              <div class="btn-group">
-                                 <a href="singleBook.php" class="btn btn-sm btn-outline-info">View</a>
+                                 <a href="books/singleBook.php" class="btn btn-sm btn-outline-info">View</a>
                                  <a href="" class="btn btn-sm btn-outline-secondary">Edit</a>
                              </div>
                          </div>
@@ -29,4 +29,4 @@
              </div>
         </div>
 
-<?php require('templates/footer.php'); ?>
+<?php require('../templates/footer.php'); ?>

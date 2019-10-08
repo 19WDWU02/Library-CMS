@@ -1,0 +1,14 @@
+{
+    "name": "19wdwu02/library-cms",
+    "description": "This is a class project for learning php, we are creating a library cms",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Richard Hpa",
+            "email": "richard.hpa@yoobeecolleges.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^3.6"
+    }
+}
