@@ -1,50 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Yoobee School of Design Library</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <header class="blog-header py-3 bg-info">
-        <div class="container">
-            <div class="row text-center d-flex">
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center justify-content-md-start order-2 order-md-1 pt-2 pt-md-0">
-                    <a class="text-light" href="#">Subscribe</a>
-                </div>
-                <div class="col-12 col-md order-1 order-md-2">
-                    <a class="blog-header-logo text-light" href="index.html">Yoobee School of Design Library</a>
-                </div>
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center justify-content-md-end order-3 order-md-3 pt-2 pt-md-0">
-                    <a class="text-light" href="#">
-                        <i class="fas fa-search mx-3"></i>
-                    </a>
-                    <a class="btn btn-sm btn-outline-light" href="#">Sign up</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-around">
-                <a class="p-2 text-muted" href="allBooks.html">Books</a>
-                <a class="p-2 text-muted" href="">Movies</a>
-            </nav>
-        </div>
+<?php require('templates/header.php'); ?>
 
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
             <div class="row">
                 <div class="col-12 col-md px-0 text-center text-md-left ">
                     <h1 class="display-5 font-italic">Harry Potter and the Philosopher's Stone</h1>
                     <p class="lead my-3">Harry Potter has been living an ordinary life, constantly abused by his surly and cold aunt and uncle, Vernon and Petunia Dursley and bullied by their spoiled son Dudley since the death of his parents ten years prior. His life changes on the day of his eleventh birthday when he receives a letter of acceptance into a Hogwarts School of Witchcraft and Wizardry.</p>
-                    <p class="lead mb-0"><a href="singleBook.html" class="text-white font-weight-bold">Continue reading...</a></p>
+                    <p class="lead mb-0"><a href="singleBook.php" class="text-white font-weight-bold">Continue reading...</a></p>
                 </div>
                 <div class="col-12 col-md-4 pt-5 pt-md-0">
                     <img src="images/HarryPotter1.jpg" alt="" class="img-fluid">
@@ -62,7 +23,7 @@
                                 <h3 class="mb-0"><a class="text-dark" href="#">Latest Book Title</a></h3>
                                 <div class="mb-1 text-muted">Nov 12</div>
                                 <p class="card-text mb-auto">Harry Potter and the Philosopher's Stone.</p>
-                                <a href="singleBook.html">Continue reading</a>
+                                <a href="singleBook.php">Continue reading</a>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
@@ -90,11 +51,5 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/script.js"></script>
-</body>
-</html>
+<?php require('templates/footer.php'); ?>
