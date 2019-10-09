@@ -28,12 +28,13 @@ If you don't have your own database, you can import that file through phpmyadmin
 Remember at the end of your day to export the sql file and include it in your project so you can continue with the information which you added in this class.
 
 ## Tasks
-**Task 1 - Wed 9th October**
-Prepare the PHP project to also include movies.  
-You are to create at least these files
+**Task 1 - Wed 9th October**  
+Prepare the PHP project to also include movies.    
+You are to create at least these files and include all the nessessary html code
 - allMovies.php
 - addMovie.php
 - singleMovie.php
+Look on the equivalent in books for examples
 
 Design them slightly differently than we have with our books section so that you aren't just copying the same thing.
 
