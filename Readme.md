@@ -19,6 +19,11 @@ Create a .env file in your root directory which will include the variable names 
 
 ```shell
 PROJECT_URL=
+
+DB_HOST=
+DB_USERNAME=
+DB_PASSWORD=
+DB_TABLE=
 ```
 A .env.example file has been provided.
 

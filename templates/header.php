@@ -8,6 +8,7 @@
     $dotenv = Dotenv\Dotenv::create(__DIR__ . '/..');
     $dotenv->load();
     // echo getenv('PROJECT_URL');
+    require('connection.php');
  ?>
 
 <!DOCTYPE html>
