@@ -34,6 +34,7 @@ You are to create at least these files and include all the nessessary html code
 - allMovies.php
 - addMovie.php
 - singleMovie.php
+
 Look on the equivalent in books for examples
 
 Design them slightly differently than we have with our books section so that you aren't just copying the same thing.
