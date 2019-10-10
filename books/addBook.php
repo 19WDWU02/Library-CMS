@@ -68,17 +68,6 @@
                 die('Something went wrong with adding in our books');
             }
 
-
-
-
-
-
-
-
-
-
-
-
         }
 
     }

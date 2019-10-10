@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2019 at 10:53 PM
+-- Generation Time: Oct 10, 2019 at 10:34 PM
 -- Server version: 5.7.27-0ubuntu0.16.04.1
 -- PHP Version: 7.0.33-8+ubuntu16.04.1+deb.sury.org+1
 
@@ -54,6 +54,15 @@ CREATE TABLE `books` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`_id`, `title`, `year`, `description`, `author_id`) VALUES
+(2, 'test book', 2002, 'This is the description of our test book', 1),
+(3, 'Random Title', 2001, 'This is a random Description', 1),
+(4, 'Testing Book', 2002, 'This is testing a description', 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -83,7 +92,7 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `_id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `_id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
