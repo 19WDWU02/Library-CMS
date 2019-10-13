@@ -7,7 +7,7 @@
         // var_dump('we are connected');
         $dbc->set_charset('utf8mb4');
     } else {
-        die('ERROR, connection could not be made to the database, please check your enviroment variables in your .env file. There is an example provided if you do not have one.');
+        die('ERROR, connection could not be made to the database, please check your enviroment variables in your .env file. There is an example provided if you do not have one. Please go check the Readme.md for install instructions');
     }
 
  ?>
