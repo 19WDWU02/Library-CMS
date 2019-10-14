@@ -10,7 +10,7 @@
         $result = mysqli_query($dbc, $sql);
         if($result && mysqli_affected_rows($dbc) > 0){
             $singleBook = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            var_dump($singleBook);
+            // var_dump($singleBook);
             extract($singleBook);
         } else if($result && mysqli_affected_rows($dbc) === 0){
             header('Location: ../errors/404.php');
@@ -65,6 +65,7 @@
             array_push($errors, 'The title length must be no more than 65535 characters.');
         }
 
+
         if(empty($errors)){
             // $title = mysqli_real_escape_string($dbc, $title);
             $safeTitle = mysqli_real_escape_string($dbc, $title);
@@ -89,10 +90,18 @@
                 die('Something went wrong with finding an author');
             }
 
-            $booksSql = "INSERT INTO `books`( `title`, `year`, `description`, `author_id`) VALUES ('$safeTitle',$safeYear,'$safeDescription',$authorID)";
+            if(isset($_GET['id'])){
+                $booksSql = "UPDATE `books` SET `title`='$safeTitle',`year`=$safeYear,`description`='$safeDescription',`author_id`=$authorID WHERE _id = $bookID";
+            } else {
+                $booksSql = "INSERT INTO `books`( `title`, `year`, `description`, `author_id`) VALUES ('$safeTitle',$safeYear,'$safeDescription',$authorID)";
+            }
+            var_dump($booksSql);
+            die();
             $booksResult = mysqli_query($dbc, $booksSql);
             if($booksResult && mysqli_affected_rows($dbc) > 0){
-                $bookID = $dbc->insert_id;
+                if(!isset($_GET['id'])){
+                    $bookID = $dbc->insert_id;
+                }
                 header('Location: singleBook.php?id='.$bookID);
             } else {
                 die('Something went wrong with adding in our books');
@@ -125,25 +134,25 @@
 
         <div class="row mb-2">
             <div class="col">
-                <form action="./books/addBook.php" method="post" enctype="multipart/form-data" autocomplete="off">
+                <form action="./books/addBook.php<?php if(isset($_GET['id'])){ echo '?id='.$_GET['id'];};?>" method="post" enctype="multipart/form-data" autocomplete="off">
                     <div class="form-group">
                       <label for="title">Book Title</label>
-                      <input type="text" class="form-control" name="title"  placeholder="Enter book title" value="<?php if(isset($title)){ echo $title; }; ?>">
+                      <input type="text" class="form-control" name="title"  placeholder="Enter book title" value="<?php if(isset($title)){ echo $title; };?>">
                     </div>
 
                     <div class="form-group">
                       <label for="year">Year</label>
-                      <input type="number" autocomplete="off" class="form-control"  name="year" placeholder="Enter the year it was released" max="<?php echo date('Y'); ?>" value="<?php if($_POST){ echo $year; }; ?>">
+                      <input type="number" autocomplete="off" class="form-control"  name="year" placeholder="Enter the year it was released" max="<?php echo date('Y'); ?>" value="<?php if(isset($year)){ echo $year; }; ?>">
                     </div>
 
                     <div class="form-group author-group">
                       <label for="author">Author</label>
-                      <input type="text" autocomplete="off" class="form-control"  name="author" placeholder="Enter books author" value="<?php if($_POST){ echo $author; }; ?>">
+                      <input type="text" autocomplete="off" class="form-control"  name="author" placeholder="Enter books author" value="<?php if(isset($author)){ echo $author; }; ?>">
                     </div>
 
                     <div class="form-group">
                       <label for="description">Book Description</label>
-                      <textarea class="form-control" name="description" rows="8" cols="80" placeholder="Description about the book"><?php if($_POST){ echo $description; }; ?></textarea>
+                      <textarea class="form-control" name="description" rows="8" cols="80" placeholder="Description about the book"><?php if(isset($description)){ echo $description; }; ?></textarea>
                     </div>
 
                     <div class="form-group">

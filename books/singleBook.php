@@ -57,8 +57,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <!-- <button type="button" class="btn btn-danger">Confirm Delete</button> -->
-                    <a href="books/delete.php?id=" class="btn btn-danger">Confirm Delete</a>
+
+                    <form action="./books/delete.php" method="post">
+                        <input type="hidden" name="bookID" value="<?php echo $singleBook['bookID']; ?>">
+                        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                    </form>
+
                 </div>
             </div>
         </div>
