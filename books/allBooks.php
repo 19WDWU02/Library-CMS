@@ -33,7 +33,7 @@ if($result){
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="books/singleBook.php?id=<?php echo $singleBook['_id']; ?>" class="btn btn-sm btn-outline-info">View</a>
-                                <a href="books/editBook.php?id=<?php echo $singleBook['_id']; ?>" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                <a href="books/addBook.php?id=<?php echo $singleBook['_id']; ?>" class="btn btn-sm btn-outline-secondary">Edit</a>
                             </div>
                         </div>
                     </div>

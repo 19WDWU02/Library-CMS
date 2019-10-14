@@ -1,6 +1,27 @@
 <?php
     require('../templates/header.php');
 
+    if(isset($_GET['id'])){
+        // var_dump('We are editing a book');
+        $pageTitle = 'Edit Book';
+        $bookID = $_GET['id'];
+        // $sql = "SELECT * FROM `books` WHERE _id = $bookID";
+        $sql = "SELECT books.`_id` as bookID, `title`, `year`, `description`, authors.name as author FROM `books` INNER JOIN authors ON books.author_id = authors._id WHERE books._id = $bookID";
+        $result = mysqli_query($dbc, $sql);
+        if($result && mysqli_affected_rows($dbc) > 0){
+            $singleBook = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            var_dump($singleBook);
+            extract($singleBook);
+        } else if($result && mysqli_affected_rows($dbc) === 0){
+            header('Location: ../errors/404.php');
+        } else {
+            die('Something went wrong with getting a single book to edit');
+        }
+    } else {
+        // var_dump('We are adding a  new book');
+        $pageTitle = 'Add New Book';
+    }
+
     if($_POST){
         // var_dump($_POST);
         // var_dump('you have submitted a form');
@@ -51,11 +72,6 @@
             $safeYear = mysqli_real_escape_string($dbc, $year);
             $safeDescription = mysqli_real_escape_string($dbc, $description);
 
-
-
-
-
-
             $findSql = "SELECT * FROM `authors` WHERE name = '$safeAuthor'";
             $findResult = mysqli_query($dbc, $findSql);
             if($findResult && mysqli_affected_rows($dbc) > 0){
@@ -81,7 +97,6 @@
             } else {
                 die('Something went wrong with adding in our books');
             }
-
         }
 
     }
@@ -90,7 +105,7 @@
 
         <div class="row mb-2">
             <div class="col">
-                <h1>Add New Book</h1>
+                <h1><?php echo $pageTitle; ?></h1>
             </div>
         </div>
 
@@ -113,7 +128,7 @@
                 <form action="./books/addBook.php" method="post" enctype="multipart/form-data" autocomplete="off">
                     <div class="form-group">
                       <label for="title">Book Title</label>
-                      <input type="text" class="form-control" name="title"  placeholder="Enter book title" value="<?php if($_POST){ echo $title; }; ?>">
+                      <input type="text" class="form-control" name="title"  placeholder="Enter book title" value="<?php if(isset($title)){ echo $title; }; ?>">
                     </div>
 
                     <div class="form-group">
