@@ -5,7 +5,7 @@
                 <a class="text-light" href="#">Subscribe</a>
             </div>
             <div class="col-12 col-md order-1 order-md-2">
-                <a class="blog-header-logo text-light" href="index.php">Yoobee School of Design Library</a>
+                <a class="blog-header-logo text-light" href="./">Yoobee School of Design Library</a>
             </div>
             <div class="col-6 col-md-3 d-flex align-items-center justify-content-center justify-content-md-end order-3 order-md-3 pt-2 pt-md-0">
                 <a class="text-light" href="#">
